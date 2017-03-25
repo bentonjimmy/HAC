@@ -29,12 +29,24 @@ public class Cluster implements WritableComparable<Cluster>
 		
 	}
 	
+	/**
+	 * Constructor that creates the cluster using the three values passed in the parameters
+	 * @param x
+	 * @param y
+	 * @param z
+	 */
 	public Cluster(double x, double y, double z)
 	{
 		super();
 		this.vector = new double[] {x, y, z};
 	}
 	
+	/**
+	 * Sets the id of the cluster.  If the cluster already has an id and is merging with another cluster than
+	 * the id of the cluster is set to the lesser number
+	 * @param argID
+	 * @return
+	 */
 	public boolean checkAndSetMinimum(LongWritable argID)
 	{
 		if(argID != null)
